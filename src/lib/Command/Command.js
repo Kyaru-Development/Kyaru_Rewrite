@@ -1,17 +1,19 @@
-class Command { 
-    constructor(cmd = {}){
-        this.help  = {
+class Command {
+    constructor(cmd = {}) {
+        this.help = {
             config: {
                 name: cmd.config.name || 'Unknown',
                 category: cmd.config.category || 'Unknown',
-                nsfw: cmd.config.nsfw || false,
                 alises: cmd.config.alises || [],
-                ownerOnly: cmd.config.ownerOnly || true,
-                cooldown: cmd.config.cooldown || 0
             },
             permissions: {
                 me: cmd.permissions.me || 'Unknown',
                 memeber: cmd.permissions.member || 'Unknown'
+            },
+            options: {
+                ownerOnly: cmd.config.ownerOnly || true,
+                cooldown: cmd.config.cooldown || 0,
+                nsfw: cmd.config.nsfw || false,
             },
             ru: {
                 name: cmd.ru.name || 'Unknown',
