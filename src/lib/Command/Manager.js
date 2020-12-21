@@ -1,13 +1,13 @@
 const { Collection } = require("discord.js"),
     fs = require('fs'),
 class CommandManeger {
+ 
     constructor(bot) {
         this.client = bot;
         this.client.commands = new Collection();
         this.client.aliases = new Collection();
         this.client.modules = new Collection();
-    }
-    registr() {
+     registr() {
         this.client.commands.clear();
         fs.readdirSync('./commands').forEach(module => {
             fs.readdir(`./commands/${module}/`, (err, files) => {
@@ -30,6 +30,7 @@ class CommandManeger {
             console.log(`✅ | Алиасы успешно загружены`);
             console.log(`✅ | Команды успешно загружены.`);
         });
+    }
         functions: {
             function findAll(cmd, lang) {
                 if (!lang) {
